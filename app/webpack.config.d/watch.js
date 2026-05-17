@@ -1,3 +1,6 @@
+// Copyright (C) 2026 Nicholas Doglio
+// SPDX-License-Identifier: MIT
+
 /*
  * Temporary workaround for [KT-80582](https://youtrack.jetbrains.com/issue/KT-80582)
  *
