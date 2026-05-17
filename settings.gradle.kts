@@ -3,51 +3,55 @@
  * SPDX-License-Identifier: MIT
  */
 
-rootProject.name = "KotlinProjectTemplate"
+rootProject.name = "YahooFantasyUtils"
 
 pluginManagement {
-    repositories {
-        exclusiveContent {
-            forRepository { google() }
-            filter {
-                includeGroupAndSubgroups("androidx")
-                includeGroupAndSubgroups("com.android")
-                includeGroup("com.google.testing.platform")
-            }
-        }
-        mavenCentral()
-        gradlePluginPortal()
+  repositories {
+    exclusiveContent {
+      forRepository { google() }
+      filter {
+        includeGroupAndSubgroups("androidx")
+        includeGroupAndSubgroups("com.android")
+        includeGroup("com.google.testing.platform")
+      }
     }
+    mavenCentral()
+    gradlePluginPortal()
+  }
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        exclusiveContent {
-            forRepository { google() }
-            filter {
-                includeGroupAndSubgroups("androidx")
-                includeGroupAndSubgroups("com.android")
-                includeGroup("com.google.testing.platform")
-            }
-        }
-        mavenCentral()
+  //    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+  repositories {
+    exclusiveContent {
+      forRepository { google() }
+      filter {
+        includeGroupAndSubgroups("androidx")
+        includeGroupAndSubgroups("com.android")
+        includeGroup("com.google.testing.platform")
+      }
     }
+    mavenCentral()
+  }
 }
 
 plugins {
-    id("com.gradle.develocity") version "4.2"
-    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-    id("com.gradle.common-custom-user-data-gradle-plugin") version "2.4.0"
+  id("com.gradle.develocity") version "4.4.1"
+  id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+  id("com.gradle.common-custom-user-data-gradle-plugin") version "2.6.0"
 }
 
 develocity {
-    buildScan {
-        termsOfUseUrl = "https://gradle.com/terms-of-service"
-        termsOfUseAgree = "yes"
-    }
+  buildScan {
+    termsOfUseUrl = "https://gradle.com/terms-of-service"
+    termsOfUseAgree = "yes"
+  }
 }
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(":app")
+
+include(":yahoo-api")
+
+include(":soup")

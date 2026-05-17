@@ -1,41 +1,41 @@
 [versions]
-agp = "8.13.0"
-desugar = "2.1.5"
-dependencyAnalysis = "3.0.4"
-kotlin = "2.2.20"
-ktfmt = "0.58"
-detekt = "1.23.8"
+kotlin = "2.3.21"
 kover = "0.9.2"
-spotless = "8.0.0"
-jdk = "24"
-jdkTarget = "17"
-sort = "0.15"
+jdk = "25"
+jdkTarget = "21"
+circuit = "0.33.1"
+plugin = "0.4.0"
+compose = "1.11.0"
+ksoup = "0.2.6"
 
 [plugins]
-convention-kotlin = { id = "dev.whosnickdoglio.convention.kotlin", version = "0.1" }
-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
-lint = { id = "com.android.lint", version.ref = "agp" }
-android-app = { id = "com.android.application", version.ref = "agp" }
-android-library = { id = "com.android.library", version.ref = "agp" }
+convention-kmp = { id = "dev.whosnickdoglio.convention.kmp", version.ref = "plugin" }
+detekt = { id = "dev.detekt", version = "2.0.0-alpha.3" }
 doctor = { id = "com.osacky.doctor", version = "0.12.1" }
-spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
-dependencyAnalysis = { id = "com.autonomousapps.dependency-analysis", version.ref = "dependencyAnalysis" }
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+dependencyAnalysis = { id = "com.autonomousapps.dependency-analysis", version = "3.12.0" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "compose" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
-ksp = { id = "com.google.devtools.ksp", version = "2.2.20-2.0.3" }
-sortDependencies = { id = "com.squareup.sort-dependencies", version.ref = "sort" }
+sortDependencies = { id = "com.squareup.sort-dependencies", version = "0.18.0" }
 burst = { id = "app.cash.burst" }
+ktfmt = { id = "com.ncorti.ktfmt.gradle", version = "0.26.0" }
+metro = { id = "dev.zacsweers.metro", version = "1.1.1" }
 
 [libraries]
-desugar = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar" }
+circuit = { module = "com.slack.circuit:circuit-foundation", version.ref = "circuit" }
+circuit-codegen-annotations = { module = "com.slack.circuit:circuit-codegen-annotations", version.ref = "circuit" }
 
-# Only present to trigger automatic renovate updates
-ktfmt = { module = "com.facebook:ktfmt", version.ref = "ktfmt" }
+compose-ui-tooling-preview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "compose" }
+#compose-ui-tooling = { module = "org.jetbrains.compose.ui:ui-tooling", version.ref = "compose" }
+compose-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "compose" }
+compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "compose" }
+compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "compose" }
+compose-material3 = { module = "org.jetbrains.compose.material3:material3", version = "1.11.0-alpha07" }
+compose-ui-backhandler = { module = "org.jetbrains.compose.ui:ui-backhandler", version.ref = "compose" }
 
-junit = { module = "junit:junit", version = "4.13.2" }
-burst = { module = "app.cash.burst:burst-gradle-plugin", version = "2.10.2" }
+ksoup = {module = "com.fleeksoft.ksoup:ksoup", version.ref = "ksoup"}
+ksoup-network = {module = "com.fleeksoft.ksoup:ksoup-network", version.ref = "ksoup"}
+
+burst = { module = "app.cash.burst:burst-gradle-plugin", version = "2.12.2" }
 assertk = { module = "com.willowtreeapps.assertk:assertk", version = "0.28.1" }
